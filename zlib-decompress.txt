@@ -1,0 +1,8 @@
+const zlib = require("zlib");
+const fs = require("fs");
+
+const source = fs.readFileSync("zlib.js");
+const result = zlib.gzipSync(source);
+
+const compressedFile = fs.writeFileSync("zlib-compress.txt", result);
+console.info(fs.readFileSync(compressedFile));
